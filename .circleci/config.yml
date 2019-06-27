@@ -1,15 +1,18 @@
 version: 2
 jobs:
-  test:
+  build:
     docker:
       - image: circleci/node:10.16.0
+    working_directory: ~/repo
     steps:
       - checkout
-      - run: echo "Hello!"
-      - run: npm i
+      - restore_cache:
+        keys:
+        - v1-dependencies-{{ checksum "package.json" }}
+        - v1-depenencies-
+      - run: npm install
+      - save_cache:
+        paths:
+          - node_modules
+        key: v1-dependencies-{{ checksum "package.json" }}
       - run: npm run test:unit
-workflows:
-  version: 2
-  testing:
-    jobs:
-      - test
