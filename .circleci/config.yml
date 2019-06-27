@@ -1,8 +1,15 @@
 version: 2
 jobs:
-  build:
+  test:
     docker:
       - image: circleci/node:10.16.0
     steps:
       - checkout
       - run: echo "Hello!"
+      - run: npm i
+      - run: npm run test:unit
+workflows:
+  version: 2
+  testing:
+    jobs:
+      - test
