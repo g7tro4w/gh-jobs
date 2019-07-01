@@ -1,14 +1,17 @@
 <template>
-    <form @submit.prevent="submit()">
+    <form
+        class="form-wrapper"
+        @submit.prevent="submit()">
         <input
-            class="search-text-field"
+            class="form-text-field"
             type="text"
             v-model="textField"
             @input="updateField()">
         <input
+        class="form-button-submit"
         :disabled="isEmptyDescription"
-        type="submit"
-        class="">
+        value="Search"
+        type="submit">
     </form>
 </template>
 <script>
@@ -37,5 +40,32 @@ export default {
 }
 </script>
 <style>
+    .form-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 15vh;
+    }
+
+    .form-button-submit {
+        border: none;
+        outline: none;
+        color: #FFF;
+        padding: 1em;
+        border-radius: 0.5em;
+        width: 250px;
+        background-color: #24292e;
+        transition: all 0.25s linear;
+    }
+
+    .form-button-submit:disabled {
+        background-color: gray;
+    }
+
+    .form-button-submit:hover {
+        cursor: pointer;
+        box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    }
 
 </style>
