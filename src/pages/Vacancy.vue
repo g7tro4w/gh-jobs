@@ -1,9 +1,16 @@
 <template>
 
   <div>
+    <div>
+      <button @click.prevent="goBack()">
+        Go back
+      </button>
+    </div>
     <spinner v-if="attemptLoading"/>
     <div v-else>
-      Hello from vacancy page! {{ vacancy.title }}
+      {{ vacancy.title }}
+      <div v-html="vacancy.description">
+      </div>
     </div>
   </div>
 </template>
@@ -21,6 +28,11 @@ export default {
     return {
       vacancy: {},
       attemptLoading: false
+    }
+  },
+  methods: {
+    goBack () {
+      this.$router.back()
     }
   },
   created () {
