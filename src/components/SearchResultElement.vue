@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div @click.prevent="click()">
         <span>
             {{ position.title }}
         </span>
@@ -7,11 +7,16 @@
 </template>
 <script>
 export default {
-    props: {
-        position: {
-            type: Object
-        }
+  props: {
+    position: {
+      type: Object
     }
+  },
+  methods: {
+    click () {
+      this.$emit('click')
+    }
+  }
 }
 </script>
 <style>
