@@ -1,10 +1,11 @@
 <template>
     <div id="search-page">
-            <div class="search-form">
-                <search-form
-                    v-model="searchField"
-                    @submit="onFormSubmit"/>
-            </div>
+        <div class="search-form">
+            <search-form
+                v-model="searchField"
+                @submit="onFormSubmit"/>
+        </div>
+        <div class="content-wrapper">
             <spinner v-if="isVisibleSpinner"/>
             <div
                 class="search-results"
@@ -16,6 +17,7 @@
                     @click="goToVacancyPage(position.id)"
                     />
             </div>
+        </div>
     </div>
 </template>
 <script>
@@ -83,6 +85,11 @@ export default {
 }
 </script>
 <style>
+    .content-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
     .search-results {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
