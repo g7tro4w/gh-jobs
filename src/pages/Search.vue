@@ -83,5 +83,9 @@ export default {
 }
 </script>
 <style>
-
+    .search-results {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 2vh;
+    }
 </style>
