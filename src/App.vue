@@ -1,6 +1,12 @@
 <template>
   <div id="app">
-    <router-view/>
+    <header>
+            <h1>GitHub Jobs</h1>
+            <h2>GitHub Jobs</h2>
+        </header>
+        <main>
+          <router-view/>
+          </main>
   </div>
 </template>
 

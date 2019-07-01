@@ -3,7 +3,8 @@
         <input
             class="search-text-field"
             type="text"
-            v-model="description">
+            v-model="textField"
+            @input="updateField()">
         <input
         :disabled="isEmptyDescription"
         type="submit"
@@ -12,20 +13,24 @@
 </template>
 <script>
 export default {
+  props: ['value'],
   data () {
     return {
-      description: ''
+      textField: this.value
     }
   },
   computed: {
     isEmptyDescription () {
-      return this.description === ''
+      return this.textField === ''
     }
   },
   methods: {
+    updateField () {
+      this.$emit('input', this.textField)
+    },
     submit () {
       this.$emit('submit', {
-        description: this.description
+        description: this.textField
       })
     }
   }

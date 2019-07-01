@@ -1,12 +1,8 @@
 <template>
     <div id="search-page">
-        <header>
-            <h1>GitHub Jobs</h1>
-            <h2>GitHub Jobs</h2>
-        </header>
-        <main>
             <div class="search-form">
                 <search-form
+                    v-model="searchField"
                     @submit="onFormSubmit"/>
             </div>
             <spinner v-if="isVisibleSpinner"/>
@@ -20,7 +16,6 @@
                     @click="goToVacancyPage(position.id)"
                     />
             </div>
-        </main>
     </div>
 </template>
 <script>
@@ -40,11 +35,13 @@ export default {
   data () {
     return {
       positions: [],
+      searchField: '',
       attemptSubmit: false
     }
   },
   created () {
     if (this.$route.query.description) {
+      this.searchField = this.$route.query.description
       this.searchVacancy({
         description: this.$route.query.description
       })

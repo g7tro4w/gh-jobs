@@ -1,5 +1,7 @@
 <template>
-    <div @click.prevent="click()">
+    <div
+      class="vacancy-wrapper"
+      @click.prevent="click()">
         <span>
             {{ position.title }}
         </span>
@@ -20,5 +22,14 @@ export default {
 }
 </script>
 <style>
+  .vacancy-wrapper {
+    display: block;
+    background-color: #FFF;
 
+  }
+  .vacancy-wrapper:hover {
+    cursor: pointer;
+    transition: background-color linear 0.5s;
+    background-color: #DDD;
+  }
 </style>
