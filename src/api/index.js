@@ -8,12 +8,14 @@ export default {
                 axios({
                     method: 'GET',
                     url: POSITIONS_URL,
-                    params: positionParams
+                    params: positionParams,
+                    timeout: 10000
                 })
                 .then((response) => {
-                    console.log(response.data)
+                    resolve(response.data)
                 })
                 .catch((error) => {
+                    console.warn(error)
                     reject(new Error(error))
                 })
             })
