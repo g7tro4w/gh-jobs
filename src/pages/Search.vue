@@ -5,7 +5,6 @@
                 v-model="searchField"
                 @submit="onFormSubmit"/>
         </div>
-        <div class="content-wrapper">
             <spinner v-if="isVisibleSpinner"/>
             <div
                 class="search-results"
@@ -16,7 +15,11 @@
                     :key="position.id"
                     @click="goToVacancyPage(position.id)"
                     />
-            </div>
+            <!-- <div v-else>
+                <span>
+                    Enter the job information you are interested in and click on "Search" button!
+                </span>
+            </div> -->
         </div>
     </div>
 </template>
@@ -47,6 +50,8 @@ export default {
       this.searchVacancy({
         description: this.$route.query.description
       })
+    } else {
+      this.searchField = ''
     }
   },
   watch: {
@@ -92,7 +97,7 @@ export default {
     }
     .search-results {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
         grid-gap: 2vh;
     }
 </style>

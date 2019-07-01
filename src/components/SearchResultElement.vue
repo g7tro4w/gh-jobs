@@ -9,13 +9,13 @@
       </div>
       <div class="vacancy-body">
         <p>
-          {{ position.company }}
+          Company: {{ position.company }}
         </p>
         <p>
-          {{ position.location }}
+          Location: {{ position.location }}
         </p>
         <p>
-          {{ position.type }}
+          Position type: {{ position.type }}
         </p>
       </div>
       <div class="vacancy-footer">
@@ -53,9 +53,8 @@ export default {
     padding: 0.5em;
     background-color: #FFF;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-    height: 25vh;
     border: #DDD solid 1px;
-
+    border-radius: 0.5em;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

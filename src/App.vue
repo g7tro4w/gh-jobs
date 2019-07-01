@@ -11,6 +11,10 @@
 </template>
 
 <style>
+  body{
+    font-family: 'Roboto Condensed', sans-serif;
+    text-rendering: optimizeLegibility;
+  }
   #app {
     display: flex;
     flex-direction: column;
@@ -26,5 +30,9 @@
   main {
     width: 80%;
     flex: 1 0;
+  }
+
+  header h2 {
+    color: #555;
   }
 </style>
