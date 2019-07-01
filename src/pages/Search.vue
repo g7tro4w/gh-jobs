@@ -2,7 +2,7 @@
     <div id="search-page">
         <header>
             <h1>GitHub Jobs</h1>
-            <h1>GitHub Jobs</h1>
+            <h2>GitHub Jobs</h2>
         </header>
         <main>
             <div class="search-form">
