@@ -2,11 +2,12 @@
     <form
         class="form-wrapper"
         @submit.prevent="submit()">
-        <input
+        <search-input
             class="form-text-field"
             type="text"
+            placeholder="Search..."
             v-model="textField"
-            @input="updateField()">
+            @input="updateField()"/>
         <input
         class="form-button-submit"
         :disabled="isEmptyDescription"
@@ -15,7 +16,12 @@
     </form>
 </template>
 <script>
+import SearchInput from './Input.vue'
+
 export default {
+  components: {
+    'search-input': SearchInput
+  },
   props: ['value'],
   data () {
     return {
