@@ -4,36 +4,36 @@
             v-model="inputValue"
             @input="onInput"
             :placeholder="placeholder"
-            class="input" 
-            :type="type"/>    
-    </div>    
+            class="input"
+            :type="type"/>
+    </div>
 </template>
 <script>
 export default {
-    props: {
-        value: {
-            type: String,
-            default: ''
-        },
-        type: {
-            type: String,
-            default: 'text'
-        },
-        placeholder: {
-            type: String,
-            default: ''
-        }
+  props: {
+    value: {
+      type: String,
+      default: ''
     },
-    data() {
-        return {
-            inputValue: this.value
-        }
+    type: {
+      type: String,
+      default: 'text'
     },
-    methods: {
-        onInput() {
-            this.$emit('input', this.inputValue)
-        }
+    placeholder: {
+      type: String,
+      default: ''
     }
+  },
+  data () {
+    return {
+      inputValue: this.value
+    }
+  },
+  methods: {
+    onInput () {
+      this.$emit('input', this.inputValue)
+    }
+  }
 }
 </script>
 <style>

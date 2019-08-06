@@ -1,10 +1,9 @@
 <template>
-
   <div>
     <div>
-      <button @click.prevent="goBack()">
+      <ghj-button @click="goBack()">
         Go back
-      </button>
+      </ghj-button>
     </div>
     <spinner v-if="attemptLoading"/>
     <div v-else>
@@ -20,9 +19,12 @@ import API from '@/api/index.js'
 
 import Spinner from '@/components/Spinner'
 
+import Button from '@/components/InterfaceComponents/Button.vue'
+
 export default {
   components: {
-    'spinner': Spinner
+    'spinner': Spinner,
+    'ghj-button': Button
   },
   data () {
     return {

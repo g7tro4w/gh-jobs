@@ -1,26 +1,20 @@
 <template>
-    <div id="search-page">
-        <div class="search-form">
-            <search-form
-                v-model="searchField"
-                @submit="onFormSubmit"/>
-        </div>
-            <spinner v-if="isVisibleSpinner"/>
-            <div
-                class="search-results"
-                v-else-if="isSearchResultsExists">
-                <search-result-element
-                    v-for="position in positions"
-                    :position="position"
-                    :key="position.id"
-                    @click="goToVacancyPage(position.id)"
-                    />
-            <!-- <div v-else>
-                <span>
-                    Enter the job information you are interested in and click on "Search" button!
-                </span>
-            </div> -->
-        </div>
+  <div id="search-page">
+    <div class="search-form">
+      <search-form
+        v-model="searchField"
+        @submit="onFormSubmit"/>
+    </div>
+    <spinner v-if="isVisibleSpinner"/>
+    <div
+      class="search-results"
+      v-else-if="isSearchResultsExists">
+      <search-result-element
+        v-for="position in positions"
+        :position="position"
+        :key="position.id"
+        @click="goToVacancyPage(position.id)"/>
+      </div>
     </div>
 </template>
 <script>

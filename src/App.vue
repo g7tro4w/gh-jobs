@@ -20,6 +20,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    --white-color: #FFF;
+    --black-color: #000;
+    --default-state-color: #00a9fd;
+    --danger-state-color: #F44336;
+    --success-state-color: #4CAF50;
+    --dark-state-color: #24292e;
+    /* --default-state-color: #00a9fd;
+    --default-state-color: #00a9fd;
+    --default-state-color: #00a9fd; */
   }
   header {
     width: 100%;

@@ -1,26 +1,31 @@
 <template>
     <form
         class="form-wrapper"
-        @submit.prevent="submit()">
+        @submit.prevent="submitForm()">
         <search-input
             class="form-text-field"
             type="text"
             placeholder="Search..."
             v-model="textField"
             @input="updateField()"/>
-        <input
-        class="form-button-submit"
-        :disabled="isEmptyDescription"
-        value="Search"
-        type="submit">
+        <ghj-button
+          variant="dark"
+          type="submit"
+          size="lg"
+          :disabled="isEmptyDescription">
+          Search
+        </ghj-button>
     </form>
 </template>
 <script>
 import SearchInput from './Input.vue'
 
+import Button from '@/components/InterfaceComponents/Button.vue'
+
 export default {
   components: {
-    'search-input': SearchInput
+    'search-input': SearchInput,
+    'ghj-button': Button
   },
   props: ['value'],
   data () {
@@ -37,7 +42,7 @@ export default {
     updateField () {
       this.$emit('input', this.textField)
     },
-    submit () {
+    submitForm () {
       this.$emit('submit', {
         description: this.textField
       })
